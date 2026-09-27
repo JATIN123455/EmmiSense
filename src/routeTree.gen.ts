@@ -10,33 +10,69 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarbonCalculatorRouteImport } from './routes/carbon-calculator'
+import { Route as ScenarioAnalysisRouteImport } from './routes/scenario-analysis'
+import { Route as SolarForecastRouteImport } from './routes/solar-forecast'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarbonCalculatorRoute = CarbonCalculatorRouteImport.update({
+  id: '/carbon-calculator',
+  path: '/carbon-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenarioAnalysisRoute = ScenarioAnalysisRouteImport.update({
+  id: '/scenario-analysis',
+  path: '/scenario-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolarForecastRoute = SolarForecastRouteImport.update({
+  id: '/solar-forecast',
+  path: '/solar-forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/carbon-calculator' | '/scenario-analysis' | '/solar-forecast'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/carbon-calculator' | '/scenario-analysis' | '/solar-forecast'
+  id:
+    | '__root__'
+    | '/'
+    | '/carbon-calculator'
+    | '/scenario-analysis'
+    | '/solar-forecast'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarbonCalculatorRoute: typeof CarbonCalculatorRoute
+  ScenarioAnalysisRoute: typeof ScenarioAnalysisRoute
+  SolarForecastRoute: typeof SolarForecastRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +84,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carbon-calculator': {
+      id: '/carbon-calculator'
+      path: '/carbon-calculator'
+      fullPath: '/carbon-calculator'
+      preLoaderRoute: typeof CarbonCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenario-analysis': {
+      id: '/scenario-analysis'
+      path: '/scenario-analysis'
+      fullPath: '/scenario-analysis'
+      preLoaderRoute: typeof ScenarioAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solar-forecast': {
+      id: '/solar-forecast'
+      path: '/solar-forecast'
+      fullPath: '/solar-forecast'
+      preLoaderRoute: typeof SolarForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarbonCalculatorRoute: CarbonCalculatorRoute,
+  ScenarioAnalysisRoute: ScenarioAnalysisRoute,
+  SolarForecastRoute: SolarForecastRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

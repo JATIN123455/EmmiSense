@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## CarbonSense architecture
+- All data access goes through `src/services/api.ts` (mock now, FastAPI later via `APP_CONFIG.backendConnected`) — UI never holds ML logic.
+- Emission factors, prices and model metrics live in `src/lib/config.ts`; metrics stay `null` until real results exist — never fabricate results.
