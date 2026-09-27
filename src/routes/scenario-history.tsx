@@ -208,15 +208,15 @@ function ScenarioHistory() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Metric</TableHead>
-                  <TableHead className="text-right">{compared[0].name}</TableHead>
-                  <TableHead className="text-right">{compared[1].name}</TableHead>
+                  <TableHead className="text-right">{compared[0]!.name}</TableHead>
+                  <TableHead className="text-right">{compared[1]!.name}</TableHead>
                   <TableHead className="text-right">Δ</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {METRICS.map(([k, l, f]) => {
-                  const a = compared[0][k] as number;
-                  const b = compared[1][k] as number;
+                  const a = compared[0]![k] as number;
+                  const b = compared[1]![k] as number;
                   return (
                     <TableRow key={k}>
                       <TableCell>{l}</TableCell>

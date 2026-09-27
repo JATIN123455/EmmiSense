@@ -5,7 +5,7 @@
  */
 export const APP_CONFIG = {
   demoMode: true,
-  apiBaseUrl: (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? "",
+  apiBaseUrl: (import.meta.env['VITE_API_BASE_URL'] as string | undefined) ?? "",
   backendConnected: false,
   model: {
     name: "XGBoost Regressor",
