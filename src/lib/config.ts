@@ -42,7 +42,7 @@ export const APP_CONFIG = {
       Diesel: { factor: 2.68, unit: "L" },
       Petrol: { factor: 2.31, unit: "L" },
       "Natural Gas": { factor: 2.02, unit: "m³" },
-    } as Record<string, { factor: number; unit: string }>,
+    },
     carbonPricePerTonne: 1000, // INR per tCO2e — indicative assumption
   },
   currency: "₹",

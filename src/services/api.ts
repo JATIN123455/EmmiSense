@@ -73,7 +73,7 @@ export function calculateCarbon(i: CarbonInput): CarbonResult {
 export async function runScenario(i: ScenarioInput): Promise<ScenarioResult> {
   if (live()) return request("/api/scenario/run", { method: "POST", body: JSON.stringify(i) });
   await delay(500);
-  const fuelFactor = APP_CONFIG.factors.fuel.Diesel.factor;
+  const fuelFactor = APP_CONFIG.factors.fuel["Diesel"].factor;
   const netGridKwh = Math.max(0, i.electricityKwh - i.solarKwh);
   const scope1T = (i.fuelLitres * fuelFactor) / 1000;
   const scope2T = (netGridKwh * i.gridFactor) / 1000;

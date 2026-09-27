@@ -10,8 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as CarbonCalculatorRouteImport } from './routes/carbon-calculator'
+import { Route as ExplainableAiRouteImport } from './routes/explainable-ai'
+import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as ScenarioAnalysisRouteImport } from './routes/scenario-analysis'
+import { Route as ScenarioHistoryRouteImport } from './routes/scenario-history'
 import { Route as SolarForecastRouteImport } from './routes/solar-forecast'
 
 const IndexRoute = IndexRouteImport.update({
@@ -19,14 +23,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CarbonCalculatorRoute = CarbonCalculatorRouteImport.update({
   id: '/carbon-calculator',
   path: '/carbon-calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExplainableAiRoute = ExplainableAiRouteImport.update({
+  id: '/explainable-ai',
+  path: '/explainable-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScenarioAnalysisRoute = ScenarioAnalysisRouteImport.update({
   id: '/scenario-analysis',
   path: '/scenario-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenarioHistoryRoute = ScenarioHistoryRouteImport.update({
+  id: '/scenario-history',
+  path: '/scenario-history',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolarForecastRoute = SolarForecastRouteImport.update({
@@ -37,41 +61,76 @@ const SolarForecastRoute = SolarForecastRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/explainable-ai': typeof ExplainableAiRoute
+  '/reports': typeof ReportsRoute
   '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/scenario-history': typeof ScenarioHistoryRoute
   '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/explainable-ai': typeof ExplainableAiRoute
+  '/reports': typeof ReportsRoute
   '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/scenario-history': typeof ScenarioHistoryRoute
   '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/carbon-calculator': typeof CarbonCalculatorRoute
+  '/explainable-ai': typeof ExplainableAiRoute
+  '/reports': typeof ReportsRoute
   '/scenario-analysis': typeof ScenarioAnalysisRoute
+  '/scenario-history': typeof ScenarioHistoryRoute
   '/solar-forecast': typeof SolarForecastRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/carbon-calculator' | '/scenario-analysis' | '/solar-forecast'
+    | '/'
+    | '/about'
+    | '/carbon-calculator'
+    | '/explainable-ai'
+    | '/reports'
+    | '/scenario-analysis'
+    | '/scenario-history'
+    | '/solar-forecast'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/carbon-calculator' | '/scenario-analysis' | '/solar-forecast'
+  to:
+    | '/'
+    | '/about'
+    | '/carbon-calculator'
+    | '/explainable-ai'
+    | '/reports'
+    | '/scenario-analysis'
+    | '/scenario-history'
+    | '/solar-forecast'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/carbon-calculator'
+    | '/explainable-ai'
+    | '/reports'
     | '/scenario-analysis'
+    | '/scenario-history'
     | '/solar-forecast'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   CarbonCalculatorRoute: typeof CarbonCalculatorRoute
+  ExplainableAiRoute: typeof ExplainableAiRoute
+  ReportsRoute: typeof ReportsRoute
   ScenarioAnalysisRoute: typeof ScenarioAnalysisRoute
+  ScenarioHistoryRoute: typeof ScenarioHistoryRoute
   SolarForecastRoute: typeof SolarForecastRoute
 }
 
@@ -84,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/carbon-calculator': {
       id: '/carbon-calculator'
       path: '/carbon-calculator'
@@ -91,11 +157,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CarbonCalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/explainable-ai': {
+      id: '/explainable-ai'
+      path: '/explainable-ai'
+      fullPath: '/explainable-ai'
+      preLoaderRoute: typeof ExplainableAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scenario-analysis': {
       id: '/scenario-analysis'
       path: '/scenario-analysis'
       fullPath: '/scenario-analysis'
       preLoaderRoute: typeof ScenarioAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenario-history': {
+      id: '/scenario-history'
+      path: '/scenario-history'
+      fullPath: '/scenario-history'
+      preLoaderRoute: typeof ScenarioHistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solar-forecast': {
@@ -110,8 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   CarbonCalculatorRoute: CarbonCalculatorRoute,
+  ExplainableAiRoute: ExplainableAiRoute,
+  ReportsRoute: ReportsRoute,
   ScenarioAnalysisRoute: ScenarioAnalysisRoute,
+  ScenarioHistoryRoute: ScenarioHistoryRoute,
   SolarForecastRoute: SolarForecastRoute,
 }
 export const routeTree = rootRouteImport

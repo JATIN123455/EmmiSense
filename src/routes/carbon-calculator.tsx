@@ -79,7 +79,7 @@ function CarbonCalculator() {
                 value={fuelType}
                 onValueChange={(v) => {
                   setFuelType(v);
-                  setFuelFactor(f.fuel[v].factor);
+                  setFuelFactor(f.fuel[v as keyof typeof f.fuel].factor);
                 }}
               >
                 <SelectTrigger><SelectValue /></SelectTrigger>
@@ -90,8 +90,8 @@ function CarbonCalculator() {
                 </SelectContent>
               </Select>
             </div>
-            <Field id="fuel" label="Fuel Consumption" unit={f.fuel[fuelType].unit} value={fuel} onChange={setFuel} />
-            <Field id="ff" label="Emission Factor" unit={`kg/${f.fuel[fuelType].unit}`} value={fuelFactor} onChange={setFuelFactor} />
+            <Field id="fuel" label="Fuel Consumption" unit={f.fuel[fuelType as keyof typeof f.fuel].unit} value={fuel} onChange={setFuel} />
+            <Field id="ff" label="Emission Factor" unit={`kg/${f.fuel[fuelType as keyof typeof f.fuel].unit}`} value={fuelFactor} onChange={setFuelFactor} />
             <Formula>Scope 1 = Fuel × Emission Factor</Formula>
             <Result label="Estimated Scope 1 Emissions" kg={main.scope1Kg} />
           </div>
