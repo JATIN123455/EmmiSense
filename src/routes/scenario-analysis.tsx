@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { DemoBadge, KpiCard, PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
+import { KpiCard, PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
 import { runScenario, saveScenario } from "@/services/api";
 import { APP_CONFIG } from "@/lib/config";
 import type { ScenarioInput, ScenarioResult } from "@/services/types";
@@ -54,7 +54,7 @@ function ScenarioAnalysis() {
     mutationFn: () => saveScenario(result!.input.name || "Untitled scenario", result!.scen),
     onSuccess: (s) => {
       qc.invalidateQueries({ queryKey: ["scenarios"] });
-      toast.success(`Saved as ${s.id}`, { description: "Stored in demo session history." });
+      toast.success(`Saved as ${s.id}`, { description: "Stored in the current session history." });
     },
   });
 
@@ -89,7 +89,6 @@ function ScenarioAnalysis() {
         eyebrow="What-if Engine"
         title="Sustainability Scenario Analysis"
         subtitle="Compare operational scenarios and estimate their impact on renewable generation and carbon emissions."
-        actions={<DemoBadge label="Demo Engine" />}
       />
 
       <div className="grid gap-6 xl:grid-cols-[380px_1fr]">
@@ -160,7 +159,7 @@ function ScenarioAnalysis() {
                 <KpiCard icon={IndianRupee} tone="muted" label="Indicative Carbon Value" value={`₹${fmtInt(s.indicativeValue)}`} sub="Indicative — not market value" />
               </div>
 
-              <SectionCard title="Baseline vs Scenario" right={<DemoBadge />}>
+              <SectionCard title="Baseline vs Scenario">
                 <div className="h-72">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={rows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
@@ -201,7 +200,7 @@ function ScenarioAnalysis() {
                   </TableBody>
                 </Table>
                 <p className="mt-3 text-xs text-muted-foreground">
-                  Demo engine: Scope 2 uses net grid import (consumption − solar). Values are demo calculations until the backend is connected.{" "}
+                  Scope 2 uses net grid import (consumption − solar). Results are calculated from the assumptions entered above.{" "}
                   <Link to="/scenario-history" className="text-primary hover:underline">View history</Link>
                 </p>
               </SectionCard>

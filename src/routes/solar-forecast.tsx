@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { DemoBadge, InfoTip, PageHeader, SectionCard } from "@/components/cs/common";
+import { InfoTip, PageHeader, SectionCard } from "@/components/cs/common";
 import { ForecastChart } from "@/components/cs/ForecastChart";
 import { getModelMetrics, getSolarForecast } from "@/services/api";
 import { APP_CONFIG } from "@/lib/config";
@@ -61,7 +61,7 @@ function SolarForecast() {
                 ) : v == null ? (
                   <p className="mt-2 text-sm font-medium text-muted-foreground">Awaiting trained model</p>
                 ) : (
-                  <p className="mt-2 font-display text-xl font-bold">{(v as number).toFixed(3)} <DemoBadge label="Demo Metric" /></p>
+                  <p className="mt-2 font-display text-xl font-bold">{(v as number).toFixed(3)}</p>
                 )}
               </div>
             ))}
@@ -77,7 +77,6 @@ function SolarForecast() {
         title="Actual vs Predicted Solar Power"
         right={
           <div className="flex items-center gap-2">
-            <DemoBadge />
             <Tabs value={range} onValueChange={(v) => setRange(v as ForecastRange)}>
               <TabsList>
                 <TabsTrigger value="today">Today</TabsTrigger>
@@ -91,7 +90,7 @@ function SolarForecast() {
         {forecast.data ? <ForecastChart data={forecast.data} height={360} /> : <Skeleton className="h-[360px] w-full" />}
       </SectionCard>
 
-      <SectionCard className="mt-6" title="Forecast Records" description="Most recent 24 daylight records" right={<DemoBadge />}>
+      <SectionCard className="mt-6" title="Forecast Records" description="Most recent 24 daylight records">
         <div className="max-h-96 overflow-auto rounded-md border">
           <Table>
             <TableHeader className="sticky top-0 bg-muted">

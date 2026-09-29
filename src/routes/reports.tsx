@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { DemoBadge, PageHeader } from "@/components/cs/common";
+import { PageHeader } from "@/components/cs/common";
 import { generateReport, getScenarioHistory, type ReportKind } from "@/services/api";
 import { pageMeta } from "@/lib/meta";
 
@@ -43,7 +43,7 @@ function Reports() {
         downloadText(
           `emissisense-summary-${scen.id}.txt`,
           [
-            "EmissiSense — Scenario Summary (DEMO DATA)",
+            "EmissiSense — Scenario Summary",
             "==========================================",
             `Scenario: ${scen.name} (${scen.id})`,
             `Created: ${scen.createdAt}`,
@@ -54,10 +54,10 @@ function Reports() {
             `Avoided: ${scen.avoidedT} tCO2e`,
             `Indicative value: INR ${scen.indicativeValue} (indicative estimate, not a market value)`,
             "",
-            "Note: Generated in Demo Mode from mock data. Not experimental results.",
+            "Note: Generated from sample inputs and not presented as experimental results.",
           ].join("\n"),
         );
-        toast.success("Demo text summary downloaded", { description: "Full PDF reports require the backend." });
+        toast.success("Text summary downloaded", { description: "Full PDF reports require the backend." });
       } else {
         setNotice(res.message);
         toast.info(res.message);
@@ -77,7 +77,7 @@ function Reports() {
 
   return (
     <>
-      <PageHeader eyebrow="Output" title="EmissiSense Reports" subtitle="Export summaries and evaluation results for documentation and review." actions={<DemoBadge label="Demo Mode" />} />
+      <PageHeader eyebrow="Output" title="EmissiSense Reports" subtitle="Export summaries and evaluation results for documentation and review." />
 
       <div className="mb-6 max-w-sm space-y-1.5">
         <Label className="text-xs">Selected scenario</Label>

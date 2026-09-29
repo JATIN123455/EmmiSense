@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { BookOpen, ScatterChart } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Skeleton } from "@/components/ui/skeleton";
-import { DemoBadge, PageHeader, SectionCard } from "@/components/cs/common";
+import { PageHeader, SectionCard } from "@/components/cs/common";
 import { getSHAPData } from "@/services/api";
 import { pageMeta } from "@/lib/meta";
 
@@ -21,11 +21,10 @@ function ExplainableAI() {
         eyebrow="Model Transparency"
         title="Explainable AI"
         subtitle="Understand which features influence the solar-generation prediction."
-        actions={<DemoBadge label="Demo SHAP Visualization" />}
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
-        <SectionCard className="lg:col-span-2" title="SHAP Feature Importance" description="Mean absolute SHAP value per feature (global importance)" right={<DemoBadge />}>
+        <SectionCard className="lg:col-span-2" title="SHAP Feature Importance" description="Mean absolute SHAP value per feature (global importance)">
           {isError ? (
             <p className="py-16 text-center text-sm text-destructive">Could not load SHAP data.</p>
           ) : data ? (
@@ -48,7 +47,7 @@ function ExplainableAI() {
             <Skeleton className="h-80 w-full" />
           )}
           <p className="mt-3 text-xs text-muted-foreground">
-            Illustrative values only. Real SHAP values will be produced by the Python SHAP TreeExplainer on the trained XGBoost model.
+            Sample values only. Trained-model SHAP values will be produced by the Python SHAP TreeExplainer after integration.
           </p>
         </SectionCard>
 
