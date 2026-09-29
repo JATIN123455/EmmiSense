@@ -104,10 +104,10 @@ function About() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Student 1", "Team Member"],
-            ["Student 2", "Team Member"],
-            ["Student 3", "Team Member"],
-            ["Supervisor", "Project Guide"],
+            ["Jatin", "Team Member"],
+            ["Mayur Gulia", "Team Member"],
+            ["Rudra Solanki", "Team Member"],
+            ["Dr. Suresh Kumar", "Project Guide"],
           ].map(([n, r]) => (
             <Card key={n} className="shadow-card">
               <CardContent className="flex items-center gap-3 p-5">
