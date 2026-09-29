@@ -30,11 +30,6 @@ function SolarForecast() {
         eyebrow="Forecasting"
         title="Solar Generation Forecast"
         subtitle="Machine-learning-based solar power prediction using historical generation and weather features."
-        actions={
-          <Badge variant="outline" className="gap-1.5 border-destructive/30 text-destructive">
-            <Unplug className="h-3 w-3" /> ML Backend: Not Connected
-          </Badge>
-        }
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
