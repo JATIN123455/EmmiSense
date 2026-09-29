@@ -1,5 +1,5 @@
 /**
- * CarbonSense configuration.
+ * EmissiSense configuration.
  * All emission factors, prices and model metrics are ASSUMPTIONS / PLACEHOLDERS.
  * Replace with values from your methodology or the Python backend.
  */
