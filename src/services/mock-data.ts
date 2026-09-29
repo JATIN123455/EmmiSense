@@ -54,9 +54,9 @@ export const DEMO_SHAP: ShapFeature[] = [
 ];
 
 export const DEMO_SCENARIOS: SavedScenario[] = [
-  { id: "SC-001", name: "Baseline FY26", createdAt: "2026-08-02", solarKwh: 12480, scope1T: 18.6, scope2T: 74.2, totalT: 92.8, avoidedT: 8.9, indicativeValue: 8900, status: "Demo" },
-  { id: "SC-002", name: "Rooftop +200 kW", createdAt: "2026-08-11", solarKwh: 18900, scope1T: 18.6, scope2T: 69.6, totalT: 88.2, avoidedT: 13.4, indicativeValue: 13400, status: "Demo" },
-  { id: "SC-003", name: "Diesel genset phase-out", createdAt: "2026-08-19", solarKwh: 12480, scope1T: 6.2, scope2T: 78.1, totalT: 84.3, avoidedT: 8.9, indicativeValue: 8900, status: "Demo" },
+  { id: "SC-001", name: "Baseline FY26", createdAt: "2026-08-02", solarKwh: 12480, scope1T: 18.6, scope2T: 74.2, totalT: 92.8, avoidedT: 8.9, indicativeValue: 8900, status: "Draft" },
+  { id: "SC-002", name: "Rooftop +200 kW", createdAt: "2026-08-11", solarKwh: 18900, scope1T: 18.6, scope2T: 69.6, totalT: 88.2, avoidedT: 13.4, indicativeValue: 13400, status: "Draft" },
+  { id: "SC-003", name: "Diesel genset phase-out", createdAt: "2026-08-19", solarKwh: 12480, scope1T: 6.2, scope2T: 78.1, totalT: 84.3, avoidedT: 8.9, indicativeValue: 8900, status: "Draft" },
   { id: "SC-004", name: "Night-shift reduction", createdAt: "2026-09-03", solarKwh: 12480, scope1T: 17.9, scope2T: 61.4, totalT: 79.3, avoidedT: 8.9, indicativeValue: 8900, status: "Draft" },
-  { id: "SC-005", name: "Combined roadmap 2027", createdAt: "2026-09-18", solarKwh: 24300, scope1T: 5.8, scope2T: 58.7, totalT: 64.5, avoidedT: 17.3, indicativeValue: 17300, status: "Demo" },
+  { id: "SC-005", name: "Combined roadmap 2027", createdAt: "2026-09-18", solarKwh: 24300, scope1T: 5.8, scope2T: 58.7, totalT: 64.5, avoidedT: 17.3, indicativeValue: 17300, status: "Draft" },
 ];

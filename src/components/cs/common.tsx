@@ -1,26 +1,10 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import { FlaskConical, Info } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Info } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-
-export function DemoBadge({ label = "Demo Data", className }: { label?: string; className?: string }) {
-  return (
-    <Badge
-      variant="outline"
-      className={cn(
-        "gap-1 border-warning-foreground/25 bg-warning font-mono text-[10px] font-medium uppercase tracking-wider text-warning-foreground",
-        className,
-      )}
-    >
-      <FlaskConical className="h-3 w-3" />
-      {label}
-    </Badge>
-  );
-}
 
 export function PageHeader({
   title,

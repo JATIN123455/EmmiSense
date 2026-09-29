@@ -12,7 +12,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { DemoBadge, PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
+import { PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
 import { deleteScenario, getScenarioHistory } from "@/services/api";
 import type { SavedScenario } from "@/services/types";
 import { pageMeta } from "@/lib/meta";
@@ -80,12 +80,7 @@ function ScenarioHistory() {
         eyebrow="Records"
         title="Scenario History"
         subtitle="Saved scenario runs. This table is ready to be backed by the SQLite database through the API layer."
-        actions={
-          <>
-            <DemoBadge label="Demo Scenarios" />
-            <Button asChild size="sm"><Link to="/scenario-analysis">New scenario</Link></Button>
-          </>
-        }
+        actions={<Button asChild size="sm"><Link to="/scenario-analysis">New scenario</Link></Button>}
       />
 
       <SectionCard
@@ -106,7 +101,6 @@ function ScenarioHistory() {
             <SelectTrigger className="sm:w-44" aria-label="Filter by status"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All statuses</SelectItem>
-              <SelectItem value="Demo">Demo</SelectItem>
               <SelectItem value="Saved">Saved</SelectItem>
               <SelectItem value="Draft">Draft</SelectItem>
             </SelectContent>

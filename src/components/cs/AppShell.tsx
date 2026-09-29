@@ -75,12 +75,6 @@ function SidebarBody({ onNavigate }: { onNavigate?: () => void }) {
             </div>
           ))}
         </dl>
-        {APP_CONFIG.demoMode && (
-          <div className="mt-3 flex items-center gap-2 rounded-md bg-warning px-2.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-warning-foreground">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-warning-foreground" />
-            Demo Mode Active
-          </div>
-        )}
       </div>
     </div>
   );
@@ -107,9 +101,6 @@ export function AppShell({ children }: { children: ReactNode }) {
       </Sheet>
       <main className="lg:pl-64">
         <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">{children}</div>
-        <footer className="mx-auto max-w-7xl px-4 pb-8 text-xs text-muted-foreground md:px-8">
-          EmissiSense · B.Tech Final Year Project · Values shown in Demo Mode are illustrative and not experimental results.
-        </footer>
       </main>
     </div>
   );

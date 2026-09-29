@@ -4,7 +4,7 @@ import { PlugZap, Fuel, Sun, IndianRupee, AlertTriangle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { DemoBadge, Formula, PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
+import { Formula, PageHeader, SectionCard, fmt, fmtInt } from "@/components/cs/common";
 import { APP_CONFIG } from "@/lib/config";
 import { calculateCarbon } from "@/services/api";
 import { pageMeta } from "@/lib/meta";
@@ -58,7 +58,6 @@ function CarbonCalculator() {
         eyebrow="Carbon Engine"
         title="Carbon Emissions Calculator"
         subtitle="Estimate Scope 1, Scope 2 and avoided emissions from operational scenarios."
-        actions={<DemoBadge label="Demo Emission Factors" />}
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
