@@ -34,7 +34,7 @@ function Logo() {
         <Leaf className="h-5 w-5" />
       </span>
       <div className="leading-tight">
-        <p className="font-display text-[15px] font-bold text-foreground">CarbonSense</p>
+        <p className="font-display text-[15px] font-bold text-foreground">EmissiSense</p>
         <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Carbon Intelligence</p>
       </div>
     </div>
@@ -108,7 +108,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <main className="lg:pl-64">
         <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">{children}</div>
         <footer className="mx-auto max-w-7xl px-4 pb-8 text-xs text-muted-foreground md:px-8">
-          CarbonSense · B.Tech Final Year Project · Values shown in Demo Mode are illustrative and not experimental results.
+          EmissiSense · B.Tech Final Year Project · Values shown in Demo Mode are illustrative and not experimental results.
         </footer>
       </main>
     </div>

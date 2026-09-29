@@ -8,7 +8,7 @@ import { APP_CONFIG } from "@/lib/config";
 import { pageMeta } from "@/lib/meta";
 
 export const Route = createFileRoute("/about")({
-  head: () => pageMeta("About Project", "Problem statement, architecture, methodology and team behind the CarbonSense B.Tech project."),
+  head: () => pageMeta("About Project", "Problem statement, architecture, methodology and team behind the EmissiSense B.Tech project."),
   component: About,
 });
 
@@ -37,7 +37,7 @@ const STACK = [
 function About() {
   return (
     <>
-      <PageHeader eyebrow="B.Tech Final Year Project" title="About CarbonSense" subtitle="CarbonSense — AI-Powered Carbon Intelligence & Renewable Energy Forecasting" />
+      <PageHeader eyebrow="B.Tech Final Year Project" title="About EmissiSense" subtitle="EmissiSense — AI-Powered Carbon Intelligence & Renewable Energy Forecasting" />
 
       <div className="grid gap-6 md:grid-cols-2">
         <SectionCard title="Problem Statement" right={<Target className="h-4 w-4 text-primary" />}>
@@ -47,7 +47,7 @@ function About() {
           </p>
         </SectionCard>
         <SectionCard title="Proposed Solution" right={<Lightbulb className="h-4 w-4 text-primary" />}>
-          <p className="mb-3 text-sm text-muted-foreground">CarbonSense combines:</p>
+          <p className="mb-3 text-sm text-muted-foreground">EmissiSense combines:</p>
           <div className="flex flex-wrap gap-1.5">
             {["Machine Learning", "Solar Generation Forecasting", "Carbon Emission Estimation", "Explainable AI", "Scenario Analysis", "Data Visualization", "Reporting"].map((x) => (
               <Badge key={x} variant="secondary" className="font-normal">{x}</Badge>
@@ -122,7 +122,7 @@ function About() {
         </div>
         <div className="mt-6 rounded-xl bg-brand p-6 text-primary-foreground">
           <p className="font-mono text-xs uppercase tracking-widest opacity-80">B.Tech Final Year Project</p>
-          <p className="mt-1 font-display text-lg font-bold">CarbonSense — AI-Powered Carbon Intelligence & Renewable Energy Forecasting</p>
+          <p className="mt-1 font-display text-lg font-bold">EmissiSense — AI-Powered Carbon Intelligence & Renewable Energy Forecasting</p>
         </div>
       </section>
     </>
