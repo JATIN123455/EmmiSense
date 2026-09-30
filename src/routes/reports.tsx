@@ -41,9 +41,9 @@ function Reports() {
       const res = await generateReport(kind);
       if (kind === "project" && scen) {
         downloadText(
-          `emissisense-summary-${scen.id}.txt`,
+          `emmisense-summary-${scen.id}.txt`,
           [
-            "EmissiSense — Scenario Summary",
+            "EmmiSense — Scenario Summary",
             "==========================================",
             `Scenario: ${scen.name} (${scen.id})`,
             `Created: ${scen.createdAt}`,
@@ -77,7 +77,7 @@ function Reports() {
 
   return (
     <>
-      <PageHeader eyebrow="Output" title="EmissiSense Reports" subtitle="Export summaries and evaluation results for documentation and review." />
+      <PageHeader eyebrow="Output" title="EmmiSense Reports" subtitle="Export summaries and evaluation results for documentation and review." />
 
       <div className="mb-6 max-w-sm space-y-1.5">
         <Label className="text-xs">Selected scenario</Label>

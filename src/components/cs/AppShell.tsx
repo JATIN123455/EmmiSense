@@ -34,7 +34,7 @@ function Logo() {
         <Leaf className="h-5 w-5" />
       </span>
       <div className="leading-tight">
-        <p className="font-display text-[15px] font-bold text-foreground">EmissiSense</p>
+        <p className="font-display text-[15px] font-bold text-foreground">EmmiSense</p>
         <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Carbon Intelligence</p>
       </div>
     </div>

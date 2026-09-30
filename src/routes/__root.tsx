@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EmissiSense — AI-Powered Carbon Intelligence" },
+      { title: "EmmiSense — AI-Powered Carbon Intelligence" },
       { name: "description", content: "Explainable AI platform for solar forecasting, carbon estimation and scenario analysis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
