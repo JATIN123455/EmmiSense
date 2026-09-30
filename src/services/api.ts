@@ -1,5 +1,5 @@
 /**
- * EmissiSense API service layer.
+ * EmmiSense API service layer.
  * Every function currently returns DEMO data. To connect the Python FastAPI
  * backend, set VITE_API_BASE_URL + APP_CONFIG.backendConnected and replace the
  * mock branch with `request(...)` calls. UI code only imports from here.
